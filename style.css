@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper: #F3F0E8;
+  --paper-dim: #ECE7DA;
+  --ink: #1E2330;
+  --ink-soft: #4A5063;
+  --accent: #B5482E;
+  --accent-soft: #D9886F;
+  --line-green: #5B7065;
+  --rule: #D8D2C2;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---- Nav ---- */
+nav.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0 0;
+}
+nav.top .name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+nav.top a.cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  border: 1px solid var(--ink);
+  padding: 7px 14px;
+  border-radius: 2px;
+  color: var(--ink);
+}
+nav.top a.cta:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  padding: 64px 0 40px;
+  overflow: hidden;
+}
+.hero .court {
+  position: absolute;
+  right: -60px;
+  top: -20px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.16;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  max-width: 9.5em;
+}
+.hero .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: block;
+}
+.hero p.lede {
+  position: relative;
+  z-index: 1;
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  max-width: 32em;
+}
+
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 8px 0 40px;
+}
+
+/* ---- Sections ---- */
+section { padding: 8px 0 44px; }
+section h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--line-green);
+  margin: 0 0 20px;
+}
+section p { color: var(--ink-soft); max-width: 36em; }
+
+/* ---- CV entries ---- */
+.entry {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+}
+.entry:first-of-type { border-top: 1px solid var(--rule); }
+.entry .dates {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.entry .role { font-weight: 600; margin: 0 0 2px; }
+.entry .org { color: var(--ink-soft); font-size: 0.95rem; margin: 0; }
+
+@media (max-width: 540px) {
+  .entry { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* ---- Footer ---- */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 0 48px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---- Recruit page ---- */
+.recruit-card {
+  background: var(--paper-dim);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 36px 30px;
+  margin-top: 12px;
+}
+.recruit-card p.blurb {
+  font-size: 1.08rem;
+  color: var(--ink);
+  max-width: 34em;
+}
+.btn-primary {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 13px 22px;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover { background: #963a23; text-decoration: none; }
+.fine-print {
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
